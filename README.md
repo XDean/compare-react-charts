@@ -1,8 +1,6 @@
 # Compare React Chart Libraries
 
-## States
-
-_2021-05-19_
+## Library State _(2021-05-19)_
 
 |           |  Stars | Download | Issues |      Updated |      Created |    Size |
 |----------:|-------:|---------:|-------:|-------------:|-------------:|--------:|

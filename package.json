@@ -11,6 +11,7 @@
     "@blueprintjs/icons": "^3.26.0",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.2.0",
+    "@types/chart.js": "^2.9.32",
     "@types/dom-to-image": "^2.6.2",
     "@types/react-grid-layout": "^1.1.1",
     "chart.js": "^3.2.1",

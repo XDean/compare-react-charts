@@ -3,6 +3,7 @@ import {Card, Icon} from "@blueprintjs/core";
 import {RechartsBar} from "./Recharts";
 import {useEffect, useState} from "react";
 import {getFromLS, saveToLS} from "../util/grid";
+import {ChartJSBar} from "./ChartJS";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -17,17 +18,20 @@ export const BarDemo = () => {
                           draggableHandle={'.drag'}
                           onLayoutChange={(_, ls) => setLayouts(ls)}
     >
-      <div key={'Recharts'}>
-        <Card className={'w-full h-full relative p-1 flex flex-col'} elevation={2}>
-          <Icon icon={'move'} className={'absolute right-2 top-2 cursor-move drag'}/>
-          <div className={'text-2xl text-center'}>Recharts</div>
-          <div className={'flex-grow w-full'}>
-            <RechartsBar/>
-          </div>
-        </Card>
-      </div>
-      <div key={'2'}><Card className={'drag w-full h-full'} elevation={2}>2</Card></div>
-      <div key={'3'}><Card className={'drag w-full h-full'} elevation={2}>3</Card></div>
+      {[
+        {name: 'Recharts', pane: <RechartsBar/>},
+        {name: 'ChartJS', pane: <ChartJSBar/>},
+      ].map(({name, pane}) => (
+        <div key={name}>
+          <Card className={'w-full h-full relative p-1 flex flex-col'} elevation={2}>
+            <Icon icon={'move'} className={'absolute right-2 top-2 cursor-move drag'}/>
+            <div className={'text-2xl text-center'}>{name}</div>
+            <div className={'flex-grow w-full relative'}>
+                {pane}
+            </div>
+          </Card>
+        </div>
+      ))}
     </ResponsiveGridLayout>
   )
 }

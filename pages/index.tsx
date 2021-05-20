@@ -1,6 +1,7 @@
 import {Icon, Tab, Tabs} from "@blueprintjs/core";
 // @ts-ignore
 import README from '../README.md'
+import {Demo} from "../components/Demo";
 
 const IndexPage = () => {
   return (
@@ -21,8 +22,8 @@ const IndexPage = () => {
           <Tab
             id={'demo'}
             title={<div><Icon icon={'list-detail-view'}/> DEMO</div>}
-            panelClassName={'border-l ml-1 flex-grow'}
-            panel={<div>demo</div>}
+            panelClassName={'border-l pl-0 flex-grow'}
+            panel={<Demo/>}
           />
         </Tabs>
       </div>

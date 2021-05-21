@@ -1,8 +1,8 @@
 import ReactECharts from 'echarts-for-react';
 import {EChartOption} from 'echarts'
-import {data} from "./data";
+import {BarProps, Data} from "./data";
 
-export const EChartsBar = () => {
+export const EChartsBar = ({data}:BarProps) => {
   return (
     <ReactECharts
       className={'h-full w-full'}
@@ -14,7 +14,7 @@ export const EChartsBar = () => {
         yAxis: {
           type: 'value'
         },
-        series: (['pv', 'uv'] as (keyof typeof data[number])[]).map(k => ({
+        series: (['pv', 'uv'] as (keyof Data)[]).map(k => ({
           data: data.map(e => e[k]),
           type: 'bar',
           name: k

@@ -1,12 +1,12 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import {data} from "./data";
+import {BarProps, Data} from "./data";
 
-export const PlotlyBar = () => {
+export const PlotlyBar = ({data}: BarProps) => {
   return (
     <Plot
       data={
-        (['pv', 'uv'] as (keyof typeof data[number])[]).map(k => (
+        (['pv', 'uv'] as (keyof Data)[]).map(k => (
           {
             x: data.map(e => e.name),
             y: data.map(e => e[k]),

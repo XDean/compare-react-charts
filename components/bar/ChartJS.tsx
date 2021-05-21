@@ -1,14 +1,14 @@
 import {Bar} from 'react-chartjs-2';
-import {data} from "./data";
+import {BarProps, Data} from "./data";
 import {getColor} from "../util/palette";
 
-export const ChartJSBar = () => {
+export const ChartJSBar = ({data}: BarProps) => {
   return (
     <div className={'relative h-full'}>
       <Bar
         data={{
           labels: data.map(d => d.name),
-          datasets: (['pv', 'uv'] as (keyof typeof data[number])[]).map((k, i) => (
+          datasets: (['pv', 'uv'] as (keyof Data)[]).map((k, i) => (
             {
               label: k,
               data: data.map(e => e[k]),

@@ -1,14 +1,14 @@
 import {VictoryBar, VictoryChart, VictoryGroup, VictoryTooltip} from "victory";
-import {data} from "./data";
+import {BarProps, Data} from "./data";
 
-export const VictoryBarDemo = () => {
+export const VictoryBarDemo = ({data}: BarProps) => {
   return (
     <VictoryChart>
       <VictoryGroup
         offset={15}
         colorScale={"qualitative"}
       >
-        {(['pv', 'uv'] as (keyof typeof data[number])[]).map(k => (
+        {(['pv', 'uv'] as (keyof Data)[]).map(k => (
           <VictoryBar
             key={k}
             labelComponent={<VictoryTooltip/>}

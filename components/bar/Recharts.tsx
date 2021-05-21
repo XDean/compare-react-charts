@@ -1,7 +1,7 @@
 import {Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
-import {data} from "./data";
+import {BarProps} from "./data";
 
-export const RechartsBar = () =>
+export const RechartsBar = ({data}: BarProps) =>
   (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart

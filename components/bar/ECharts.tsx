@@ -1,5 +1,6 @@
 import ReactECharts from 'echarts-for-react';
 import {EChartOption} from 'echarts'
+import {data} from "./data";
 
 export const EChartsBar = () => {
   return (
@@ -8,15 +9,16 @@ export const EChartsBar = () => {
       option={{
         xAxis: {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: data.map(e => e.name),
         },
         yAxis: {
           type: 'value'
         },
-        series: [{
-          data: [120, 200, 150, 80, 70, 110, 130],
-          type: 'bar'
-        }],
+        series: (['pv', 'uv'] as (keyof typeof data[number])[]).map(k => ({
+          data: data.map(e => e[k]),
+          type: 'bar',
+          name: k
+        })),
       } as EChartOption}
     />
   )

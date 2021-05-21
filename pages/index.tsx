@@ -1,6 +1,6 @@
 import {Icon, Tab, Tabs} from "@blueprintjs/core";
 // @ts-ignore
-import README from '../README.md'
+import README from '../components/compare.mdx'
 import {Demo} from "../components/Demo";
 
 const IndexPage = () => {
@@ -12,16 +12,16 @@ const IndexPage = () => {
         </div>
       </div>
       <div className={'relative flex-grow w-full p-2'}>
-        <Tabs className={'w-full h-full'} vertical large defaultSelectedTabId={'readme'}>
+        <Tabs className={'w-full h-full'} vertical large defaultSelectedTabId={'compare'}>
           <Tab
-            id={'readme'}
-            title={<div><Icon icon={'manual'}/> README</div>}
+            id={'compare'}
+            title={<div><Icon icon={'manual'}/> Compare</div>}
             panelClassName={'border-l ml-1 flex-grow'}
             panel={<article className="markdown-body"><README/></article>}
           />
           <Tab
             id={'demo'}
-            title={<div><Icon icon={'list-detail-view'}/> DEMO</div>}
+            title={<div><Icon icon={'list-detail-view'}/> Demo</div>}
             panelClassName={'border-l pl-0 flex-grow'}
             panel={<Demo/>}
           />

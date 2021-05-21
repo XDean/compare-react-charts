@@ -11,6 +11,7 @@
     "@blueprintjs/icons": "^3.26.0",
     "@next/mdx": "^10.2.0",
     "@types/react-plotly.js": "^2.2.4",
+    "@types/victory": "^33.1.4",
     "chart.js": "^3.2.1",
     "clsx": "^1.1.1",
     "dom-to-image": "^2.6.0",

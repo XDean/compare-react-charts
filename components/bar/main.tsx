@@ -6,6 +6,7 @@ import {getFromLS, saveToLS} from "../util/grid";
 import {ChartJSBar} from "./ChartJS";
 import {EChartsBar} from "./ECharts";
 import dynamic from 'next/dynamic'
+import {VictoryBarDemo} from "./Victory";
 
 const PlotlyBar = dynamic(import("./Plotly").then(mod => mod.PlotlyBar) as any, {
   ssr: false
@@ -17,6 +18,7 @@ const charts = [
   {name: 'ChartJS', Pane: ChartJSBar},
   {name: 'ECharts', Pane: EChartsBar},
   {name: 'Plotly', Pane: PlotlyBar},
+  {name: 'Victory', Pane: VictoryBarDemo}
 ]
 
 export const BarDemo = () => {

@@ -10,10 +10,9 @@ export type Data = {
   y: number
 }
 
-export function generateData(): Data[] {
-  const types = randomInt(1, 5)
-  return randomArray(randomInt(50, 100), i => ({
-    type: `type ${i % types}`,
+export function generateData(dataset: number, points: number): Data[] {
+  return randomArray(points, i => ({
+    type: `type ${i % dataset}`,
     x: randomInt(500, 1000),
     y: randomInt(100, 500),
   }))

@@ -1,6 +1,6 @@
-import {Button} from "@blueprintjs/core";
+import {Button, NumericInput} from "@blueprintjs/core";
 import {Recharts} from "./Recharts";
-import {useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {ChartJS} from "./ChartJS";
 import {ECharts} from "./ECharts";
 import dynamic from 'next/dynamic'
@@ -21,11 +21,25 @@ const charts = [
 ]
 
 export const ScatterDemo = () => {
-  const [data, setData] = useState<Data[]>(generateData)
+  const [data, setData] = useState<Data[]>(() => generateData(1, 1))
+  const [type, setType] = useState(3)
+  const [count, setCount] = useState(100)
+  const onRandomData = useCallback(() => {
+    setData(generateData(type, count))
+  }, [type, count])
+  useEffect(() => onRandomData(), [])
   return (
     <Demo name={'Bar'} itemProps={{data}} items={charts}>
       <div className={'flex pl-2'}>
-        <Button text={'regenerate'} icon={'refresh'} onClick={() => setData(generateData())}/>
+        <Button text={'regenerate'} icon={'refresh'} onClick={onRandomData}/>
+        <div className={'flex flex-row items-center mx-2'}>
+          DataSet:
+          <NumericInput value={type} onValueChange={v => setType(v)} min={1}/>
+        </div>
+        <div className={'flex flex-row items-center mx-2'}>
+          Point Count:
+          <NumericInput value={count} onValueChange={v => setCount(v)} min={1}/>
+        </div>
       </div>
     </Demo>
   )

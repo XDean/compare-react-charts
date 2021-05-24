@@ -1,4 +1,4 @@
-import {VictoryChart, VictoryGroup, VictoryScatter} from "components/demos/scatter/Victory";
+import {VictoryChart, VictoryGroup, VictoryScatter} from "victory";
 import {ScatterDemoProps} from "./data";
 import {groupBy} from "../../util/array";
 import {getColor} from "../../util/palette";

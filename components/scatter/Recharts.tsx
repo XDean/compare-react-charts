@@ -19,8 +19,8 @@ export const Recharts = ({data}: ScatterDemoProps) => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3"/>
-        <XAxis dataKey={'x'}/>
-        <YAxis dataKey={'y'}/>
+        <XAxis dataKey={'x'} type={'number'}/>
+        <YAxis dataKey={'y'} type={'number'}/>
         <Tooltip/>
         <Legend/>
         {grouped.map(([group, values], i) => (

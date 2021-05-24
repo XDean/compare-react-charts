@@ -1,6 +1,6 @@
 import {Layouts, Responsive, WidthProvider} from 'react-grid-layout';
-import {Card, Icon} from "@blueprintjs/core";
-import React, {PropsWithChildren, useEffect, useState} from "react";
+import {Card, Divider, Icon} from "@blueprintjs/core";
+import React, {Profiler, PropsWithChildren, useCallback, useEffect, useState} from "react";
 import {getFromLS, saveToLS} from "../util/grid";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -33,16 +33,28 @@ export const Demo = <T, >(props: Props<T>) => {
       >
         {props.items.map(({name, Pane}, index) => (
           <div key={name} data-grid={{w: 6, h: 4, x: (index % 2) * 6, y: index / 2}}>
-            <Card className={'w-full h-full relative p-1 flex flex-col'} elevation={2}>
-              <Icon icon={'move'} className={'absolute right-2 top-2 cursor-move drag-handle'}/>
-              <div className={'text-2xl text-center'}>{name}</div>
-              <div className={'flex-grow w-full relative overflow-auto'}>
-                <Pane {...props.itemProps}/>
-              </div>
-            </Card>
+            <DemoCard name={name} Pane={Pane} itemProps={props.itemProps}/>
           </div>
         ))}
       </ResponsiveGridLayout>
     </div>
+  )
+}
+
+const DemoCard = <T, >({name, Pane, itemProps}: DemoItem<T> & { itemProps: T }) => {
+  const onRender = useCallback((...args) => {
+    console.log(args)
+  }, [])
+  return (
+    <Card className={'w-full h-full relative p-1 flex flex-col'} elevation={2}>
+      <Icon icon={'move'} className={'absolute right-2 top-2 cursor-move drag-handle'}/>
+      <div className={'text-2xl text-center'}>{name}</div>
+      <Divider/>
+      <div className={'flex-grow w-full relative overflow-auto'}>
+        <Profiler id={name} onRender={onRender}>
+          <Pane {...itemProps}/>
+        </Profiler>
+      </div>
+    </Card>
   )
 }

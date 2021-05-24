@@ -1,7 +1,7 @@
 import {CartesianGrid, Legend, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis} from 'recharts';
 import {ScatterDemoProps} from "./data";
-import {groupBy} from "../util/array";
-import {getColor} from "../util/palette";
+import {groupBy} from "../../util/array";
+import {getColor} from "../../util/palette";
 
 export const Recharts = ({data}: ScatterDemoProps) => {
   const grouped = Array.from(groupBy(data, e => e.type).entries());

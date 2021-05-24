@@ -1,7 +1,7 @@
 import ReactECharts from 'echarts-for-react';
 import {EChartOption} from 'echarts'
 import {ScatterDemoProps} from "./data";
-import {groupBy} from "../util/array";
+import {groupBy} from "../../util/array";
 
 export const ECharts = ({data}: ScatterDemoProps) => {
   const grouped = Array.from(groupBy(data, e => e.type).entries());

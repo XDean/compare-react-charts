@@ -1,6 +1,6 @@
 import {Bar} from 'react-chartjs-2';
 import {BarProps, Data} from "./data";
-import {getColor} from "../util/palette";
+import {getColor} from "../../util/palette";
 
 export const ChartJSBar = ({data}: BarProps) => {
   return (

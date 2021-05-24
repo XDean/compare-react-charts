@@ -1,4 +1,4 @@
-import {VictoryBar, VictoryChart, VictoryGroup, VictoryTooltip} from "victory";
+import {VictoryBar, VictoryChart, VictoryGroup, VictoryTooltip} from "components/demos/bar/Victory";
 import {BarProps, Data} from "./data";
 
 export const VictoryBarDemo = ({data}: BarProps) => {

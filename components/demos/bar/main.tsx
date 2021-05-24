@@ -6,7 +6,7 @@ import {EChartsBar} from "./ECharts";
 import dynamic from 'next/dynamic'
 import {VictoryBarDemo} from "./Victory";
 import {Data, generateData} from "./data";
-import {Demo} from "../common/Demo";
+import {Demo} from "../../common/Demo";
 
 const PlotlyBar = dynamic(import("./Plotly").then(mod => mod.PlotlyBar) as any, {
   ssr: false

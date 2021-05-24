@@ -1,7 +1,7 @@
 import {Scatter} from 'react-chartjs-2';
 import {ScatterDemoProps} from "./data";
-import {getColor} from "../util/palette";
-import {groupBy} from "../util/array";
+import {getColor} from "../../util/palette";
+import {groupBy} from "../../util/array";
 
 export const ChartJS = ({data}: ScatterDemoProps) => {
   const grouped = Array.from(groupBy(data, e => e.type).entries());

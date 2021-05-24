@@ -1,6 +1,6 @@
 import {Tab, Tabs} from "@blueprintjs/core";
-import {BarDemo} from "./bar/main";
-import {ScatterDemo} from "./scatter/main";
+import {BarDemo} from "./demos/bar/main";
+import {ScatterDemo} from "./demos/scatter/main";
 
 const demos = [
   {name: 'Bar', Pane: BarDemo},

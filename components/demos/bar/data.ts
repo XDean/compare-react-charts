@@ -1,4 +1,4 @@
-import {randomArray, randomInt} from "../util/random";
+import {randomArray, randomInt} from "../../util/random";
 
 export type BarProps = {
   data: Data[]

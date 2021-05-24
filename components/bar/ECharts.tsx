@@ -14,6 +14,7 @@ export const EChartsBar = ({data}:BarProps) => {
         yAxis: {
           type: 'value'
         },
+        tooltip: {},
         series: (['pv', 'uv'] as (keyof Data)[]).map(k => ({
           data: data.map(e => e[k]),
           type: 'bar',

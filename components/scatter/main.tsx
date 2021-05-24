@@ -1,26 +1,26 @@
 import {Button} from "@blueprintjs/core";
-import {RechartsBar} from "./Recharts";
+import {Recharts} from "./Recharts";
 import {useState} from "react";
-import {ChartJSBar} from "./ChartJS";
-import {EChartsBar} from "./ECharts";
+import {ChartJS} from "./ChartJS";
+import {ECharts} from "./ECharts";
 import dynamic from 'next/dynamic'
-import {VictoryBarDemo} from "./Victory";
+import {Victory} from "./Victory";
 import {Data, generateData} from "./data";
 import {Demo} from "../common/Demo";
 
-const PlotlyBar = dynamic(import("./Plotly").then(mod => mod.PlotlyBar) as any, {
+const Plotly = dynamic(import("./Plotly").then(mod => mod.Plotly) as any, {
   ssr: false
 }) as any
 
 const charts = [
-  {name: 'Recharts', Pane: RechartsBar},
-  {name: 'ChartJS', Pane: ChartJSBar},
-  {name: 'ECharts', Pane: EChartsBar},
-  {name: 'Plotly', Pane: PlotlyBar},
-  {name: 'Victory', Pane: VictoryBarDemo}
+  {name: 'Recharts', Pane: Recharts},
+  {name: 'ChartJS', Pane: ChartJS},
+  {name: 'ECharts', Pane: ECharts},
+  {name: 'Plotly', Pane: Plotly},
+  {name: 'Victory', Pane: Victory}
 ]
 
-export const BarDemo = () => {
+export const ScatterDemo = () => {
   const [data, setData] = useState<Data[]>(generateData)
   return (
     <Demo name={'Bar'} itemProps={{data}} items={charts}>

@@ -20,15 +20,6 @@ export const ChartJSBar = ({data}: BarProps) => {
         options={{
           responsive: true,
           maintainAspectRatio: false,
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
-                },
-              },
-            ],
-          },
         }}
         type={'bar'}/>
     </div>

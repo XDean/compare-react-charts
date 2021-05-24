@@ -1,20 +1,22 @@
 import {Tab, Tabs} from "@blueprintjs/core";
 import {BarDemo} from "./bar/main";
+import {ScatterDemo} from "./scatter/main";
 
 const demos = [
-  {name: 'Bar', Pane: BarDemo}
+  {name: 'Bar', Pane: BarDemo},
+  {name: 'Scatter', Pane: ScatterDemo},
 ]
 
 export const DemoTab = () => {
   return (
-    <Tabs className={'w-full h-full pl-1'} vertical large>
+    <Tabs className={'w-full h-full pl-1'} vertical large renderActiveTabPanelOnly>
       {demos.map(d => (
         <Tab
           id={d.name}
           title={d.name}
           key={d.name}
           panelClassName={'border-l ml-1 flex-grow overflow-auto'}
-          className={'w-16 text-center'}
+          className={'text-center'}
           panel={<d.Pane/>}
         />
       ))}

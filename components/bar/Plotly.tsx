@@ -10,6 +10,7 @@ export const PlotlyBar = ({data}: BarProps) => {
           {
             x: data.map(e => e.name),
             y: data.map(e => e[k]),
+            name: k,
             type: 'bar',
           }
         ))

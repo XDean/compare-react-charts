@@ -29,7 +29,7 @@ export const ScatterDemo = () => {
   }, [type, count])
   useEffect(() => onRandomData(), [])
   return (
-    <Demo name={'Bar'} itemProps={{data}} items={charts}>
+    <Demo name={'Scatter'} itemProps={{data}} items={charts}>
       <div className={'flex pl-2'}>
         <Button text={'regenerate'} icon={'refresh'} onClick={onRandomData}/>
         <div className={'flex flex-row items-center mx-2'}>

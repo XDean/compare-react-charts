@@ -4,25 +4,24 @@ import {getColor} from "../../util/palette";
 import {useMemo} from "react";
 
 export const ChartJSBar = ({data}: BarProps) => {
-  const dataValue = useMemo(() => ({
-    labels: data.map(d => d.name),
-    datasets: (['pv', 'uv'] as (keyof Data)[]).map((k, i) => (
-      {
-        label: k,
-        data: data.map(e => e[k]),
-        borderColor: getColor(0, i),
-        backgroundColor: getColor(0, i),
-      }
-    )),
-  }), [data])
   return (
     <div className={'relative h-full'}>
       <Bar
-        data={dataValue}
-        options={{
+        data={useMemo(() => ({
+          labels: data.map(d => d.name),
+          datasets: (['pv', 'uv'] as (keyof Data)[]).map((k, i) => (
+            {
+              label: k,
+              data: data.map(e => e[k]),
+              borderColor: getColor(0, i),
+              backgroundColor: getColor(0, i),
+            }
+          )),
+        }), [data])}
+        options={useMemo(()=>({
           responsive: true,
           maintainAspectRatio: false,
-        }}
+        }), [])}
         type={'bar'}/>
     </div>
   )

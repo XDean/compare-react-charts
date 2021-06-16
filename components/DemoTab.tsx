@@ -9,7 +9,7 @@ const demos = [
 
 export const DemoTab = () => {
   return (
-    <Tabs className={'w-full h-full pl-1'} vertical large renderActiveTabPanelOnly>
+    <Tabs className={'w-full h-full pl-1'} vertical large renderActiveTabPanelOnly defaultSelectedTabId={'Bar'}>
       {demos.map(d => (
         <Tab
           id={d.name}

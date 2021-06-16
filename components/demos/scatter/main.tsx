@@ -3,20 +3,16 @@ import {Recharts} from "./Recharts";
 import {useCallback, useEffect, useState} from "react";
 import {ChartJS} from "./ChartJS";
 import {ECharts} from "./ECharts";
-import dynamic from 'next/dynamic'
 import {Victory} from "./Victory";
 import {Data, generateData} from "./data";
 import {Demo} from "../../common/Demo";
-
-const Plotly = dynamic(import("./Plotly").then(mod => mod.Plotly) as any, {
-  ssr: false
-}) as any
+import {PlotlyScatter} from "./Plotly";
 
 const charts = [
   {name: 'Recharts', Pane: Recharts},
   {name: 'ChartJS', Pane: ChartJS},
   {name: 'ECharts', Pane: ECharts},
-  {name: 'Plotly', Pane: Plotly},
+  {name: 'Plotly', Pane: PlotlyScatter},
   {name: 'Victory', Pane: Victory}
 ]
 

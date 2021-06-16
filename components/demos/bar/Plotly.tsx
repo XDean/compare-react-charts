@@ -1,10 +1,16 @@
 import React from 'react';
-import Plot from 'react-plotly.js';
 import {BarProps, Data} from "./data";
+import dynamic from "next/dynamic";
+
+const Plotly = dynamic(
+  async () => await import('react-plotly.js'),
+  {
+    ssr: false,
+  })
 
 export const PlotlyBar = ({data}: BarProps) => {
   return (
-    <Plot
+    <Plotly
       data={
         (['pv', 'uv'] as (keyof Data)[]).map(k => (
           {

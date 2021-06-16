@@ -1,0 +1,14 @@
+@import "~github-markdown-css/github-markdown.css";
+
+.markdown-body ol {
+    list-style: decimal;
+}
+
+.markdown-body ul {
+    list-style: disc;
+}
+
+.markdown-body pre {
+    width: 800px;
+    max-width: 70%;
+}
